@@ -1,0 +1,49 @@
+<mat-sidenav-container class="dashboard-container">
+  <mat-sidenav
+    #sidenav
+    [mode]="sidenavMode"
+    [opened]="sidenavOpened"
+    class="dashboard-sidenav"
+  >
+    <div class="sidenav-header">
+      <span class="brand">AgroApp</span>
+    </div>
+    <mat-nav-list>
+      @for (item of navItems; track item.route) {
+        <a
+          mat-list-item
+          [routerLink]="item.route"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: false }"
+          (click)="isHandset() && sidenav.close()"
+        >
+          <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
+          <span matListItemTitle>{{ item.label }}</span>
+        </a>
+      }
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="dashboard-content">
+    <header class="dashboard-header">
+      <button
+        mat-icon-button
+        type="button"
+        (click)="sidenav.toggle()"
+        class="menu-btn"
+        aria-label="Abrir menú"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span class="header-spacer"></span>
+      <div class="header-actions">
+        <span class="user-name">{{ user() }}</span>
+        <button mat-icon-button type="button" (click)="logout()" aria-label="Cerrar sesión">
+          <mat-icon>logout</mat-icon>
+        </button>
+      </div>
+    </header>
+    <main class="dashboard-main">
+      <router-outlet></router-outlet>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>
