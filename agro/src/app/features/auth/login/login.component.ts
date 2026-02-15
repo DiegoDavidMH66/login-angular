@@ -46,6 +46,7 @@ export class LoginComponent {
     this.errorMessage = '';
     this.loading = true;
     const { username, password } = this.form.getRawValue();
+    console.log(username, password);
     if (this.auth.login(username, password)) {
       this.router.navigate(['/dashboard']);
     } else {
