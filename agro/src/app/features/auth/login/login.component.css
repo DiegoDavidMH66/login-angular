@@ -1,0 +1,47 @@
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1a237e 0%, #0d47a1 50%, #01579b 100%);
+  padding: 1rem;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.login-card mat-card-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.error-message {
+  color: var(--mat-form-field-error-text-color, #b00020);
+  font-size: 0.875rem;
+  margin: 0.25rem 0 0;
+}
+
+.submit-btn {
+  margin-top: 1rem;
+  height: 44px;
+}
+
+.submit-btn mat-spinner {
+  margin: 0 auto;
+}
